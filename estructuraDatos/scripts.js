@@ -54,3 +54,7 @@ const primerasLetrasColores = colores.map(color => leerPrimeraLetra(color));
 console.log(colores);
 console.log(primerasLetrasColores);
 
+/* Ejemplos para filter: Usar un array de objetos alumnos,
+O personas o algo que tengan distintas características, y filtrar por
+Esas características, generando un array con los resultados
+*/
