@@ -1,56 +1,6 @@
+import {animales,colores, precios, nombres, enlacesInteresantes, nombresHombres, apellidos, proviciasArgentinas, productos} from './modulos/datos.js';
 console.log("desde js");
 
-
-//Algunos arrays para practicar
-const animales = ["Gorila", "Chimpancé", "Caballo", "Ballena", "Perro", "Gato", "León", "Tigre"];
-const colores = ["negro", "Blanco", "rojo", "verde", "azul", "amarillo", "violeta", "celeste", "naranja", "bordo", "fucsia", "marron", "turquesa"];
-const nombres = ["hernan", "ana", "juan", "carlos", "ezequiel", "cristina", "norma", "florencia", "maria", "damian", "sergio", "jonathan", "brian", "nelson", "leandro"]; 
-const precios = [1, 2.5, 3.45, 0.8, 1.7, 24.78];
-
-//enlaces interesantes metidos en un array de objetos para mas placer
-const enlacesInteresantes = [
-    {   id: 0,
-        url : "https://dev.to/gdcodev/25-metodos-de-arrays-en-javascript-que-todo-desarrollador-debe-conocer-4a2d",
-        titulo : "25 Métodos de Arrays en JavaScript que todo desarrollador debe conocer.",
-        descripcion: "Articulo interesante en el cual se basa el principio de estas practicas"},
-    {   id: 1,
-        url : "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array",
-        titulo : "Documentacion sobre Arrays en MDN",
-        descripcion: "Estan todo los metodos para chequear"}
-]
-
-
-/*
-creador de personas aleatoreas
-*/
-
-let nombresHombres = ["juan", "carlos", "ernesto", "ezequiel", "damian", "cristian", "sergio", "jonathan", "brian", "nelson", 
-"leandro", "genaro", "claudio", "ignacio", "david", "luciano", "ismael", "eugenio", "francisco", "gervasio", "oscar", "enrique"];
-
-let apellidos = ["Gonzalez", "perez", "rodríguez", "fonseca", "castro", "hernández", "villalba", "luna", "olivera", "mansilla", "ponce", "sosa", "quiroga",
-"ramírez", "juárez", "fernández", "acosta", "campos", "gracía", "navarro", "vargas", "moreno", "álvarez", "blanco", "cruz", "godoy", "molina",
-"soria", "lópez", "torres", "herrera", "giménez", "carrizo", "domínguez", "peralta", "acuña", "benítez", "chávez", "muñoz",
-"paz", "sanchez", "vera", "ruiz", "silva", "aguero", "castillo", "ledesma", "moyano", "pérez, rivero", "soto", "torre", "vega",
-"cáceres", "arias", "bustos", "córdoba", "farías", "leiva", "maldonado", "nuñez", "ojeda", "velázquez", "toledo", "roldán", "pereyra", "miranda", "lucero",
-"ferreyra", "vázquez", "díaz", "bravo", "ávila", "barrios", "cabrera", "domínguez", "figueroa", "gutiérrez", "russo", "maidana", "ortiz", "rojas", "ayala", "correa",
-"medina", "valdez", "rivero", "peralta", "morales", "gímenez", "franco", "martín", "páez", "ramos", "aguirre", "cáceres", "duarte", "flores", "mendoza", "martínez", "ríos", "coronel", "méndez", "romero"]
-
-let proviciasArgentinas = ["buenos aires", "santa fe", "cordoba", "tierra del fuego", "santa cruz", "chubut", "rio negro", "la pampa", "entre rios", "san luis", "san juan",
- "mendoza", "catamarca", "misiones", "salta", "jujuy", "ciudad autonoma de buenos aires", "santiago del estero", "formosa"];
-
-//altura en Cm. Peso en Kilogramos
-const personaEjemplo = [
-    {   id: 0,
-        nombres: "juan carlos",
-        apellidos: "gonzalez",
-        colorPelo: "castaño",
-        colorOjos: "castaño",
-        edad: 22,
-        altura: 164,
-        peso: 70,    
-        provincia: "Buenos Aires",
-    }
-]
 
 //devuelve un numero aleatorio entre dos valores
 const getNumeroAleatorio = (min, max) => {
@@ -83,20 +33,29 @@ const crearPersonaAzar = () => {
     }    
 }
 
-
+console.log(crearPersonaAzar(), proviciasArgentinas.length);
 
 /* Accediendo a los elementos del array y estructuras
- ****************************************************/
+ ***************************************************
 console.log(animales);
 console.log(colores[4]);
 console.log(enlacesInteresantes);
 console.log(enlacesInteresantes[0]);
 console.log("titulo : ", enlacesInteresantes[0].titulo);
+*/
+
+
 
 
 /******************************************************** 
 map() : Permite recorrer el array y modificar los elementos presentes en él, 
 retornando un nuevo array con la misma longitud que el original.
+
+Generar nuevos arrays con atributos buscados dentro de un array o array de objetos en particular. 
+Aclarar que devuelve un array de la misma longitud que el original.
+Por ejemplo, generar un nuevo array con el mismo array de objetos, pero con menos atributos en cada uno.
+Devolver un nuevo array con atributos minificados, como por ejemplo, 
+sacar los primeros nombres de un atributo del tipo "nombre y apellido"
 ********************************************************/
 
 //Primer ejemplo donde le aplico un descuento a un array de precios
@@ -104,41 +63,106 @@ let descuento = 0.1;
 const preciosConDescuentos = precios.map(precio => precio - precio * descuento);
 console.log(`Precios originales: ${precios} \nPrecios con descuento: ${preciosConDescuentos}`);
 
-
 /*segundo ejemplo donde pone en mayusculas todos los titulos del array enlacesInteresantes (array de objetos) 
-y devuelve un array con los elementos procesados
-**********************************/
+y devuelve un array con los elementos procesados*/
 const enlacesInteresantesMayusculas = enlacesInteresantes.map(enlace => enlace.titulo.toUpperCase());
 console.log(`Enlaces originales (objetos): ${enlacesInteresantes} \nEnlaces con Mayusculas (elementos): ${enlacesInteresantesMayusculas}`);
 
-
-/*Tercer ejemplo, donde uso una funcion para hacer algo en map
-******************************************/
+/*Tercer ejemplo, donde uso una funcion para hacer algo en map*/
 const leerPrimeraLetra = (palabra) => { return palabra.slice(0, 1); };
 const primerasLetrasColores = colores.map(color => leerPrimeraLetra(color));
 console.log(colores);
 console.log(primerasLetrasColores);
 
+/*Cuarto Ejemplo: consigo todos los nombres de los productos */
+const nombreProductos = productos.map(producto => producto.nombre);
+console.log(nombreProductos);
 
-/* Ejemplos para filter: Usar un array de objetos alumnos,
-O personas o algo que tengan distintas características, y filtrar por
-Esas características, generando un array con los resultados
+/*quinto ejemplo, donde retorno un array de objetos, con el nombre y enlace de cada uno de los elementos.*/
+const atributosEnlacesProductos = productos.map((producto) => ({
+    titulo: producto.nombre,
+    enlace: `./imgs/${producto.imagen}`    
+}));
+console.log(atributosEnlacesProductos);
 
-Map
-Generar nuevos arrays con atributos buscados dentro de un array o array de objetos en particular. 
-Aclarar que devuelve un array de la misma longitud que el original.
-Por ejemplo, generar un nuevo array con el mismo array de objetos, pero con menos atributos en cada uno.
-Devolver un nuevo array con atributos momificados, como por ejemplo, 
-sacar los primeros nombres de un atributo del tipo "nombre y apellido"
-Some
+
+
+
+/*************************************************************** 
+filter: devuelve un nuevo array con distinta cantidad de elementos que el original.
+Con los resultados encontrados de la busqueda
+******************************************************************/
+
+/*Primer ejemplo: donde obtenemos productos, cuyos precios sean menores a 300*/
+const productosEconomicos = productos.filter(elemento => elemento.precio < 300);
+console.log(productosEconomicos);
+/*Ahora si quisieramos saber solo los nombres de dichos productos, tendriamos que usar map */
+const nombresProductosEconomicos = productosEconomicos.map(productoEconomico => productoEconomico.nombre);
+console.log(nombresProductosEconomicos);
+
+
+/*Segundo ejemplo: filtramos por letra inicial de los apellidos*/
+const apellidosEmpiezanConA = apellidos.filter(apellido => apellido.slice(0, 1) === 'a' || apellido.slice(0, 1) === 'á');
+console.log(apellidosEmpiezanConA);
+
+
+/*Tercer ejemplo: le paso una funcion para filtrar por la letra inicial b para los apellidos */
+const filtrarLetraInicialB = (apellido) => {
+    let apellidoEncontrado = apellido.slice(0, 1) === 'b';
+    if (apellidoEncontrado === true) {
+        return apellido
+    }    
+}
+const apellidosEmpiezanConB = apellidos.filter(apellido => filtrarLetraInicialB(apellido));
+console.log(apellidosEmpiezanConB);
+
+
+/*Cuarto ejemplo: le paso una funcion para filtrar por la letra inicial - Ademas a la funcion se le puede pasar la letra que tiene que buscar */
+const filtrarLetraInicial = (apellido, letra) => {
+    let apellidoEncontrado = apellido.slice(0, 1) === letra;
+    if (apellidoEncontrado === true) {
+        return apellido
+    }    
+}
+const apellidosEmpiezanConC = apellidos.filter(apellido => filtrarLetraInicial(apellido, 'c'));
+console.log(apellidosEmpiezanConC);
+
+
+
+
+/*
+SOME
+busca dentro de una array, viendo si se cumple una cierta condicion, en al menos alguno de los elementos. 
 Devuelve true o false. 
-Revisa si ALGUNO de los elementos cumple con cierta condicion. Al menos uno de los elementos.
+*/
+/*Primer ejemplo, busco si en el array de colores, alguno empieza con la letra a */
+let hayAlgunColorEmpieceConLetraA = colores.some(color => color.slice(0, 1) === 'a' );
+console.log("hay algun color que empiece con la letra 'A'?: ", hayAlgunColorEmpieceConLetraA);
 
-Sort
-Sirve para ordenar arrays
-Utiliza la función de comparación.
-Let ArrayOrdenado
+/*Segundo ejemplo: busco si en el array de colores, alguno empieza con la letra que paso como argumento */
+const hayAlgunColorEmpieceConLetra = (color, letra) => {
+    return color.slice(0, 1) === letra;    
+};
+let letraBuscada = 'b'
+let hayAlgunColorEmpieceConLetraB = colores.some(color => hayAlgunColorEmpieceConLetra(color, letraBuscada));
+console.log(`hay algun color que empiece con la letra ${letraBuscada}?: `, hayAlgunColorEmpieceConLetraB)
+
+
+/*
+SORT: Sirve para ordenar arrays. Utiliza la función de comparación.
+Para cambiar el orden, hay que invertir el orden
 */
 
-console.log(crearPersonaAzar());
+/*Primer ejemplo,  ordeno los productos de menor a mayor, segun su precio*/
+const preciosProductosMenorMayor = productos.sort((a, b) => b.precio - a.precio);
+console.log(preciosProductosMenorMayor);
+
+/*Segundo ejemplo, ordeno por orden alfabetico, antes tengo que normalizarlas con la primer letra mayusculas */
+const proviciasArgentinaMayus = proviciasArgentinas.map(provincia => provincia[0].toUpperCase() + provincia.slice(1));
+const proviciasOrdenAlfabetico = proviciasArgentinaMayus.sort((a, b) => {
+    if (b < a) return 1;
+    return -1;
+});
+console.log(proviciasOrdenAlfabetico);
+
 
