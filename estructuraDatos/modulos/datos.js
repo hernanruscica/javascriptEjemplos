@@ -50,7 +50,10 @@ creador de personas aleatorias
 */
 
 export let nombresHombres = ["juan", "carlos", "ernesto", "ezequiel", "damian", "cristian", "sergio", "jonathan", "brian", "nelson", 
-"leandro", "genaro", "claudio", "ignacio", "david", "luciano", "ismael", "eugenio", "francisco", "gervasio", "oscar", "enrique"];
+"leandro", "genaro", "claudio", "ignacio", "david", "luciano", "ismael", "eugenio", "francisco", "gervasio", "oscar", "enrique",
+"antonio", "jose", "manuel", "francisco", "david", "javier", "daniel", "miguel", "rafael", "hugo", "marc", "julian", "tomas", "mohamed", "agustin",
+"ramon", "martin", "nicolas", "felix", "ismael", "cristian", "emilio", "guillermo", "gabriel", "jordi", "ignacio", ,"alfonso", "marcos", "samuel", "iker" ,
+"domingo", "alfredo", "sebastian", "alex", "josep", "gregorio", "xavier", "angel", "felix", "cesar"];
 
 export let apellidos = ["Gonzalez", "perez", "rodríguez", "fonseca", "castro", "hernández", "villalba", "luna", "olivera", "mansilla", "ponce", "sosa", "quiroga",
 "ramírez", "juárez", "fernández", "acosta", "campos", "gracía", "navarro", "vargas", "moreno", "álvarez", "blanco", "cruz", "godoy", "molina",
